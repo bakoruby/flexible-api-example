@@ -1,12 +1,16 @@
 class Api::V1::ContactsController < ApplicationController
 
   def index
-    @contacts = Contact.all
+    @contacts = Contact.includes(symbolize_includes).
+      all
+
     render({json: @contacts}.merge(serializer_includes))
   end
 
   def show
-    @contact = Contact.find(params[:id])
+    @contact = Contact.includes(symbolize_includes).
+      find(params[:id])
+
     render({json: @contact}.merge(serializer_includes))
   end
 
