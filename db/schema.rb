@@ -42,14 +42,6 @@ ActiveRecord::Schema.define(version: 20140828020224) do
 
   add_index "delayed_jobs", ["priority", "run_at"], name: "delayed_jobs_priority", using: :btree
 
-  create_table "numbers", force: true do |t|
-    t.integer  "contact_id"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
-
-  add_index "numbers", ["contact_id"], name: "index_numbers_on_contact_id", using: :btree
-
   create_table "phones", force: true do |t|
     t.string   "number"
     t.integer  "contact_id"
