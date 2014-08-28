@@ -21,6 +21,7 @@ gem "simple_form"
 gem "title"
 gem "uglifier"
 gem "unicorn"
+gem "active_model_serializers", "0.8.0"
 
 group :development do
   gem "spring"
