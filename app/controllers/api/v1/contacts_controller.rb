@@ -1,14 +1,14 @@
 class Api::V1::ContactsController < ApplicationController
 
   def index
-    @contacts = Contact.includes(symbolize_includes).
-      all
+    @contacts = Contact.eager_load(symbolize_includes).
+      search(search_params).result
 
     render({json: @contacts}.merge(serializer_includes))
   end
 
   def show
-    @contact = Contact.includes(symbolize_includes).
+    @contact = Contact.eager_load(symbolize_includes).
       find(params[:id])
 
     render({json: @contact}.merge(serializer_includes))
@@ -25,5 +25,9 @@ class Api::V1::ContactsController < ApplicationController
 
   def symbolize_includes
     Array(params[:includes]).collect(&:to_sym)
+  end
+
+  def search_params
+    params[:q]
   end
 end

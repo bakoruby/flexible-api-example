@@ -22,6 +22,7 @@ gem "title"
 gem "uglifier"
 gem "unicorn"
 gem "active_model_serializers", "0.8.0"
+gem "ransack"
 
 group :development do
   gem "spring"
