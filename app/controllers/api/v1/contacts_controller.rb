@@ -17,8 +17,8 @@ class Api::V1::ContactsController < ApplicationController
   private
 
   def serializer_includes
-    sanitized_includes.reduce({}) do |results, include|
-      results["include_#{include}"] = true
+    sanitized_includes.reduce({included_associations: []}) do |results, include_param|
+      results[:included_associations] << include_param
       results
     end
   end

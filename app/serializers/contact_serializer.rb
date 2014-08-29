@@ -4,7 +4,10 @@ class ContactSerializer < ActiveModel::Serializer
 
   has_many :phones
 
-  def include_phones?
-    @options['include_phones']
+  def include_associations!
+    @options[:included_associations].each do |assoc|
+      include! assoc.to_sym
+    end
   end
+
 end
