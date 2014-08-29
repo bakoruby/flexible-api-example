@@ -40,6 +40,10 @@ Return all contacts that match a ransack query:
 
     /v1/contacts?q[name_start]=Jim
 
+Return all contacts that match a deep ransack query:
+
+    /v1/contacts/?includes=phones&q[phones_number_eq]=555-555-1212
+
 Return all contacts that match a ransack query and include phones:
 
     /v1/contacts?q[name_start]=Jim&includes=phones
