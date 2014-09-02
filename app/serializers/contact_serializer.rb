@@ -1,8 +1,12 @@
 class ContactSerializer < ActiveModel::Serializer
   attributes :name, :address, :city,
-    :state, :zip
+    :state, :zip, :href
 
   has_many :phones
+
+  def href
+    v1_contact_url(object)
+  end
 
   def include_associations!
     @options[:included_associations].each do |assoc|
