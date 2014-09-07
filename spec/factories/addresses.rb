@@ -2,10 +2,16 @@
 
 FactoryGirl.define do
   factory :address do
-    street "MyString"
-    city "MyString"
-    state "MyString"
-    zip "MyString"
-    contact nil
+    street "123 Main St."
+    city "Somewhere"
+    state "CA"
+    zip "76291"
+
+    factory :address_two do
+      street "777 Side St."
+      city "Anywhere"
+      state "NY"
+      zip "17820"
+    end
   end
 end

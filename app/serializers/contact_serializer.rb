@@ -2,6 +2,7 @@ class ContactSerializer < ActiveModel::Serializer
   attributes :name, :href
 
   has_many :phones
+  has_many :addresses
 
   def href
     v1_contact_url(object)
