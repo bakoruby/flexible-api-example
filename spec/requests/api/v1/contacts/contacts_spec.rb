@@ -10,16 +10,8 @@ describe 'GET /v1/contacts' do
     expect(response_json).to eq(
       'contacts' => [
         {'name' => contact.name,
-         'address' => contact.address,
-         'city' => contact.city,
-         'state' => contact.state,
-         'zip' => contact.zip,
          'href' => v1_contact_url(contact) },
          {'name' => contact_two.name,
-          'address' => contact_two.address,
-          'city' => contact_two.city,
-          'state' => contact_two.state,
-          'zip' => contact_two.zip,
           'href' => v1_contact_url(contact_two)}])
   end
 
@@ -34,19 +26,11 @@ describe 'GET /v1/contacts' do
     expect(response_json).to eq(
       'contacts' => [
         {'name' => contact.name,
-         'address' => contact.address,
-         'city' => contact.city,
-         'state' => contact.state,
-         'zip' => contact.zip,
          'href' => v1_contact_url(contact),
          'phones' => [
            {'number' => phone.number}
          ]},
          {'name' => contact_two.name,
-          'address' => contact_two.address,
-          'city' => contact_two.city,
-          'state' => contact_two.state,
-          'zip' => contact_two.zip,
           'href' => v1_contact_url(contact_two),
           'phones' => [
             {'number' => phone_two.number}
@@ -62,10 +46,6 @@ describe 'GET /v1/contacts' do
     expect(response_json).to eq(
       'contacts' => [
         {'name' => contact.name,
-         'address' => contact.address,
-         'city' => contact.city,
-         'state' => contact.state,
-         'zip' => contact.zip,
          'href' => v1_contact_url(contact)}])
   end
 
@@ -79,10 +59,6 @@ describe 'GET /v1/contacts' do
     expect(response_json).to eq(
       'contacts' => [
         {'name' => contact.name,
-         'address' => contact.address,
-         'city' => contact.city,
-         'state' => contact.state,
-         'zip' => contact.zip,
          'href' => v1_contact_url(contact),
          'phones' => [
            {'number' => phone.number }
@@ -99,10 +75,6 @@ describe 'GET /v1/contacts/:id' do
     expect(response_json).to eq({
       'contact' => {
         'name' => contact.name,
-        'address' => contact.address,
-        'city' => contact.city,
-        'state' => contact.state,
-        'zip' => contact.zip,
          'href' => v1_contact_url(contact)}})
   end
 
@@ -115,10 +87,6 @@ describe 'GET /v1/contacts/:id' do
     expect(response_json).to eq({
       'contact' => {
         'name' => contact.name,
-        'address' => contact.address,
-        'city' => contact.city,
-        'state' => contact.state,
-        'zip' => contact.zip,
         'href' => v1_contact_url(contact),
         'phones' => [
           'number' => phone.number

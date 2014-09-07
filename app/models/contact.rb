@@ -1,6 +1,6 @@
 class Contact < ActiveRecord::Base
-  validates_presence_of :name, :address, :city,
-    :state, :zip
+  validates_presence_of :name
 
   has_many :phones
+  has_many :addresses
 end

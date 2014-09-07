@@ -1,6 +1,5 @@
 class ContactSerializer < ActiveModel::Serializer
-  attributes :name, :address, :city,
-    :state, :zip, :href
+  attributes :name, :href
 
   has_many :phones
 
